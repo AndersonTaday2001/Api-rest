@@ -1,0 +1,10 @@
+services:
+  mysqldb:
+    image: mysql:8.0
+    container_name: mysqldb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-1234567}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-apirestdb}
+    ports:
+      - "3307:3306"
