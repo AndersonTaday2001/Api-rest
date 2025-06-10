@@ -1,5 +1,5 @@
 🚀 Node.js + MySQL + Docker Configuration
-Este proyecto demuestra cómo configurar correctamente una aplicación Node.js con Express, MySQL y Docker, aplicando las mejores prácticas de programación y arquitectura de software.
+🚀 Configuración completa de Node.js + Express + MySQL + Docker con arquitectura modular y mejores prácticas de desarrollo. Incluye pool de conexiones optimizado, patrón Singleton, manejo robusto de errores y containerización lista para producción..
 
 ✅ Arquitectura Modular: Separación clara de responsabilidades
 ✅ Pool de Conexiones MySQL: Configuración optimizada para producción
