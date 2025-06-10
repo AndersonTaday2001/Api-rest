@@ -1,10 +1,24 @@
 services:
   mysqldb:
-    image: mysql:8.0
+    image: mysql
     container_name: mysqldb
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-1234567}
-      MYSQL_DATABASE: ${MYSQL_DATABASE:-apirestdb}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - "3307:3306"
+
+  app:
+    build: .
+    depends_on:
+      - mysqldb
+    ports:
+      - "${PORT_SERVER}:${PORT_SERVER}"
+    environment:
+      PORT_SERVER: ${PORT_SERVER}
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
